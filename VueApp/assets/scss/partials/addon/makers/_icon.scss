@@ -1,0 +1,46 @@
+@mixin icon($conf: ()) {
+  $conf: map-extend((
+          name: default,
+          map: $icons,
+          position: before,
+          valign: false,
+          style: (
+                  base: (
+                          vertical-align: middle
+                  )
+          )
+  ), $conf, true);
+
+  $position: map-deep-get($conf, position);
+
+  @include node($conf);
+
+  @if map-deep-get($conf, valign) == true {
+    position: relative;
+  }
+  &:#{$position} {
+    /* TODO: map'te var mı yok mu diye kontrol */
+    @if map-has-keys(map-deep-get($conf, map), map-deep-get($conf, name)) {
+      content: map-deep-get(map-deep-get($conf, map), map-deep-get($conf, name));
+    }
+    @else {
+      /*@error "no such icon named" map-deep-get($conf, name);*/
+    }
+
+    @if map-deep-get($conf, valign) == true {
+      @include align(absolute, true);
+    }
+
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

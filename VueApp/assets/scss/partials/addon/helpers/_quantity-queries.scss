@@ -1,0 +1,49 @@
+@mixin quantity-query( $number, $comparison: 'equal', $children: 'children' ) {
+  $nth: '';
+
+  @if index( ('greater' 'more' '>'), $comparison ) {
+    $nth: 'n + #{$number}';
+  } @else if index( ('less' 'fewer' '<'), $comparison ) {
+    $nth: '-n + #{$number}';
+  } @else if index( ('equal' 'same' '='), $comparison ) {
+    $nth: $number;
+  } @else {
+    @warn "Sorry, that's an invalid $comparison value."
+  }
+
+  @if $children == 'children' {
+    &:nth-last-child(#{$nth}):first-child {
+      &,
+      & ~ * {
+        @content;
+      }
+    }
+  }
+  @else if $children == 'type' {
+    &:nth-last-of-type(#{$nth}):first-of-type {
+      &,
+      & ~ * {
+        @content;
+      }
+    }
+  }
+
+}
+
+@mixin quantity-equal( $number, $children: 'children' ) {
+  @include quantity-query( $number, equal, $children: $children ) {
+    @content;
+  }
+}
+
+@mixin quantity-greater( $number, $children: 'children', $children: $children ) {
+  @include quantity-query( $number, greater ) {
+    @content;
+  }
+}
+
+@mixin quantity-less( $number, $children: 'children', $children: $children ) {
+  @include quantity-query( $number, less ) {
+    @content;
+  }
+}

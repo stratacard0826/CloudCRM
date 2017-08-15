@@ -1,0 +1,28 @@
+@mixin align($conf: ()) {
+  $conf: map-extend((
+          alignment: vertical,
+          absolute: true,
+          extra-transforms: null
+  ), $conf, true);
+  position: relative !important;
+  @if map-deep-get($conf, alignment) == vertical {
+    top: 50%;
+    @include transform(translateY(-50%) map-deep-get($conf, extra-transforms) !important);
+
+  } @else if map-deep-get($conf, alignment) == horizontal {
+    left: 50%;
+    @include transform(translateX(-50%) map-deep-get($conf, extra-transforms) !important);
+
+  } @else if map-deep-get($conf, alignment) == absolute {
+    left: 50% !important;
+    top: 50% !important;
+    @include transform(translate(-50%, -50%) map-deep-get($conf, extra-transforms) !important);
+  } @else if map-deep-get($conf, alignment) == none {
+    left: 0% !important;
+    top: 0% !important;
+    @include transform(translate(0%, 0%) map-deep-get($conf, extra-transforms) !important);
+  }
+  @if map-deep-get($conf, absolute) == true {
+    position: absolute !important;
+  }
+}

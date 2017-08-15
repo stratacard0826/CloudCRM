@@ -1,0 +1,14 @@
+@mixin placeholder($v) {
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    @include each-style($v);
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    @include each-style($v);
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    @include each-style($v);
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    @include each-style($v);
+  }
+}

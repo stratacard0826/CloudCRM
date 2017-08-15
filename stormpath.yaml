@@ -1,0 +1,12 @@
+﻿---
+application:
+  name: "Clinica"
+client:
+  apiKey:
+    id: "XNGD1C7SYJR3J3ADQW5ISTJVX"
+    secret: "kTgdUIjkjnUlTasMOANV35q8A334sWBF9ooF//J8M8w"
+web:
+  me:
+    expand:
+      customData: true
+      groups: true

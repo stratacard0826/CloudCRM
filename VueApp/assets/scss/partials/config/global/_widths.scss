@@ -1,0 +1,38 @@
+$wrapper-width: 1660px;
+$gutter: 20px;
+$gutter-mobile: 10px;
+
+
+$header-height: 3.5rem;
+$header-height-short: 70px;
+$header-height-mobile: 40px;
+
+$footer-height: 250px;
+
+$landing-header-height: 107px;
+
+$header-menu-gutter: 30px;
+$header-menu-item-font-size: 16px;
+
+$stores-padding: 25px;
+
+$right-menu-padding: calc((#{$landing-header-height} / 2) - .6em);
+
+$commercial-figure-width: 49.21%;
+$commercial-caption-width: 480px;
+$commercial-figure-margin: 8.23%;
+
+
+$commerical-form-margin-eq: ((100% - $commercial-figure-width) * (8.23 / 100));
+$commercial-form-margin: 100% - #{$commercial-figure-width} - #{$commercial-caption-width} - #{$commerical-form-margin-eq};
+
+$commercial-form-width: 37.23%;
+
+$product-thumb-width: 336px;
+$product-thumb-height: 500px;
+
+$product-figure-width: 100px;
+$product-figure-height: 140px;
+
+
+$footer-height: 257px;

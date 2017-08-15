@@ -1,0 +1,39 @@
+@mixin list-horizontal($margin-left) {
+  @include clearfix;
+  > li {
+    float:left;
+    margin-left: $margin-left;
+    &:first-child {
+      margin-left:0;
+    }
+  }
+  > dt {
+    float:left;
+    margin-left: $margin-left;
+    &:first-child {
+      margin-left:0;
+    }
+  }
+  > dd {
+     float:left;
+     margin-left: $margin-left;
+     &:first-child {
+       margin-left:0;
+     }
+   }
+}
+
+@mixin list-inline($margin-left) {
+  @include clearfix;
+  > * {
+    display:inline-block;
+    margin-left: $margin-left;
+    float: none !important;
+    &:first-child {
+      margin-left:0;
+    }
+  }
+}
+
+
+

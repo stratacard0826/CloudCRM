@@ -1,0 +1,6 @@
+@mixin ie-hack() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* IE10+ specific styles go here */
+    @content
+  }
+}

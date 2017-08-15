@@ -1,0 +1,37 @@
+﻿@mixin custom-checkbox() {
+    line-height: 16px;
+    [type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+        @include visuallyhidden;
+        + span {
+            @include inline-block();
+            background: #fff;
+            border: 1px solid #D8DDE6;
+            @include border-radius(3px);
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+            margin-top: -1px;
+        }
+        &:not(:checked) {
+          + span {
+          }
+        }
+        &:checked {
+          + span {
+            @include icon-check();
+            position: relative;
+            &:before {
+                color: #0070D2;
+                font-size: 9px;
+                position: absolute;
+                left: 50% !important;
+			    top: 50% !important;
+			    @include transform(translate(-50%, -50%));
+            }
+          }
+        }
+      }
+}

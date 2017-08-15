@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="~/dist/favicon.ico" />
+    <title>@ViewData["Title"] - Clinica Cloud Platform</title>
+    <link href="~/dist/style.css" rel="stylesheet">
+    <environment names="Development">
+
+    </environment>
+    <environment names="Staging,Production">
+
+    </environment>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBZYTXQSSWGiEejQsbBe1PH8I5iLfxdhvs"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js"></script>
+</head>
+<body class="app header-fixed footer-bottom sidebar-fixed aside-menu-fixed aside-menu-hidden pace-done">
+    @RenderBody()
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

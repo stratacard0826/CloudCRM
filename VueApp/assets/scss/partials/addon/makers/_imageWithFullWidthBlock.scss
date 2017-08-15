@@ -1,0 +1,7 @@
+@mixin imageWithFullWidth() {
+  @include clearfix();
+  > img {float:left;}
+  > .element {overflow:hidden;position:relative;}
+  > div {overflow:hidden;position:relative;}
+  > dd {overflow:hidden;position:relative;}
+}

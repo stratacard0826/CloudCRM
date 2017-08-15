@@ -1,0 +1,45 @@
+﻿main.temp {
+        background: #f6f8fb;
+        overflow: auto;
+        .content-header {
+            display: none;
+        }
+}
+
+
+.specimenSnapshot {
+    h1 {
+    @include panel-heading();
+  }
+  h2 {
+    @include panel-heading-small();
+  }
+  header {
+    margin-bottom: 19px;
+    > small {
+      @include panel-info();
+    }
+  }
+}
+
+.acquireSpecimen {
+    @include panel-form();
+    fieldset {
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    mark {
+        display: none;
+    }
+    legend {
+        display: none;
+    }
+}
+
+.imageUploadView {
+    @include imageUploadView();
+    figure {
+        margin: 0 !important;
+    }
+}

@@ -1,0 +1,13 @@
+@mixin rounded($background: transparent, $dimension: 0, $border-color: transparent, $border-width: 0) {
+  width: $dimension;
+  height: $dimension;
+  line-height: $dimension;
+  background: $background;
+  border-color: $border-color;
+  border-width: $border-width;
+  border-style: solid;
+  @include border-radius(50%);
+  @include text-center();
+  @include inline-block();
+  padding: 0;
+}

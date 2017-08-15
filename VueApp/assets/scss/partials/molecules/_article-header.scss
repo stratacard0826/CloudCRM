@@ -1,0 +1,37 @@
+﻿@mixin article-header() {
+        height: 56px;
+        > nav {
+	        height: 100%;
+	        @include flexbox();
+            a {
+                &:nth-child(1) {
+                               color: #5b6f90;
+                               font-size: 12px;
+                               i {
+                                        @include icon-back_arrow();
+                                        margin-right: 12px;
+                                        font-size: 16px;
+                                        vertical-align: middle;
+                                        position: relative;
+                                        top: -1px;
+                                        @include transition(margin-right .4s linear);
+                                }
+                                &:hover {
+                                    text-decoration: none;
+                                    i {
+                                        margin-right: 9px;
+                                        @include transition(margin-right .4s linear);
+                                    }
+                                }
+                        }
+                        &:nth-child(2) {
+                                @include button-primary();
+                                @include button-small();
+                         }
+            }
+        }
+        h1 {
+           font-size: 28px;
+           color: #16325C; 
+        }
+}

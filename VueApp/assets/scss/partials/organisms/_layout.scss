@@ -1,0 +1,45 @@
+﻿$right-panel-width: 29.57%;
+$left-panel-margin: 4.83%;
+$right-panel-margin: 20px;
+
+.layout {
+    @include reset();
+    margin: 0 -30px 0;
+    @include clearfix();
+    padding: 25px 0;
+    > * {
+        margin: 0 2.86%;
+	    > header {
+	        @include article-header();
+	    }
+	    > *:not(header) {
+	        @include make-row();
+	        > * {
+	           @include quantity-equal(1) {
+	                    @include column(8,8,8,8);
+	           }
+	           @include quantity-equal(2) {
+	               &:nth-child(1) {
+	                    @include column(8,8,8,8);
+
+	                }
+	                &:nth-child(2) {
+	                    @include column(4,4,4,4);
+	                } 
+	           }
+               > form {
+                    @include list-filters();
+               }
+	           > section {
+	                @include panel();
+	           }
+	        }
+	    }
+    }
+    + .layout {
+        background: #E0E5EE;
+    }
+    &:first-child {
+        margin-top: -1rem;
+    }
+}

@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Main";
+}
+
+@*<div class="my-app" asp-prerender-module="VueApp/renderOnServer" asp-prerender-data="Model"></div>*@
+<div class="my-app"></div>
+@*<app></app>*@
+<script src="~/dist/vendor.js"></script>
+<script src="~/dist/bundle.client.js" asp-append-version="true"></script>
+

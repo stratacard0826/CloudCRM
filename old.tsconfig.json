@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "target": "es6",
+        "removeComments": false        
+    },
+    "exclude": [
+        "node_modules",
+        "wwwroot",
+        "VueApp/assets/js"
+    ]
+}

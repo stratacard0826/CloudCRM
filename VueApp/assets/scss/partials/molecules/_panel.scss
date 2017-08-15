@@ -1,0 +1,107 @@
+﻿@mixin panel() {
+  background: #fff;
+  padding: 0px 16px 32px;
+  @include border-radius(8px);
+  margin: 0 0 32px 0;
+  overflow: hidden;
+  @include clearfix();
+  h1 {
+    @include panel-heading();
+  }
+  h2 {
+    @include panel-heading-small($border: true);
+  }
+  h3 {
+    @include panel-heading-small($border: false);
+  }
+  h4 {
+    font-size: 16px;
+    color: #16325C;
+    margin-bottom: 8px;
+  }
+  header {
+    margin-bottom: 19px;
+    > small {
+      @include panel-info();
+    }
+    > * {
+	  > a {
+	    position: absolute;
+	    right: 0;
+	    bottom: 10px;
+	    font-size: 13px;
+	    color: #16325C;
+	  }
+    }
+  }
+  > p {
+    @include panel-info();
+  }
+  > ul {
+    @include panel-figure-list();
+  }
+  .imageUploadView {
+    @include imageUploadView();
+  }
+  > div {
+    @include quantity-equal(2, $children: type) {
+      width: calc(50% - 20px);
+      float: left;
+      + div {
+        margin-left: 20px;
+      }
+    }
+    > div {
+      + div {
+        margin-top: 35px;
+      }
+    }
+  }
+  > * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  > form {
+    @include panel-form();
+    legend {
+      display: block;
+    }
+    mark {
+      display: block;
+    }
+  }
+  footer {
+    @include panel-footer();
+  }
+  article {
+    @include panel-list-item();
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &:not(.compact) {
+    dl {
+      @include panel-definition();
+    }
+  }
+  &.compact {
+    dl {
+      @include panel-definition($compact: true);
+    }
+    h3 {
+      padding: 16px 0;
+    }
+    > div {
+        header {
+            display: none;
+        }
+    }
+    .imageUploadView ul > li {
+        width: 10%;
+    }
+  }
+  &.filters {
+    @include filters-panel();
+  }
+}

@@ -1,0 +1,51 @@
+﻿@mixin button() {
+    outline: 0;
+    border: 0;
+    @include inline-block();
+    cursor: pointer;
+    @include box-sizing(border-box);
+    text-align: center;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin button-primary() {
+    background: #0070D2;
+    color: #fff;
+    @include transition(background .3s ease);
+    &:hover {
+        background: lighten(#0070D2, 20%);
+        @include transition(background .3s ease);
+    }
+}
+
+@mixin button-empty() {
+    background: transparent;
+    color: #0070D2;
+    font-size: 12px;
+    @include transition(all .3s ease);
+    border: 1px solid #D8DDE6;
+    &:hover { 
+        background: #0070D2;
+        color: #fff;
+        @include transition(all .3s ease);
+    }
+}
+
+
+@mixin button-small() {
+	line-height: 32px;
+	padding: 0 21px;
+	font-size: 12px;
+    @include border-radius(4px);
+}
+
+@mixin button-block() {
+    display: block;
+    width: 100%;
+}
+
+@mixin button-md() {
+    padding: 0 42px;
+}

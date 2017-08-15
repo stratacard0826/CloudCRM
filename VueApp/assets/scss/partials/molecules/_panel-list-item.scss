@@ -1,0 +1,26 @@
+﻿@mixin panel-list-item() {
+    padding: 25px 0;
+    small {
+        display: block;
+        color: #54698D;
+        font-size: 13px;
+        margin-bottom: 9px;
+    }
+    h3 {
+        @include panel-mark();
+        line-height: 32px;
+        padding: 0;
+        a {
+            @include button();
+            @include button-empty();
+            @include button-small();
+            @include pull-right();
+        }
+    }
+    + * {
+        border-top: 1px solid #E0E5EE;
+    }
+    &:first-of-type {
+        padding-top: 6px;
+    }
+}

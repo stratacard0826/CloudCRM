@@ -1,0 +1,12 @@
+﻿@mixin panel-footer() {
+    @include clearfix();
+    margin-top: 28px;
+    > * {
+        @include quantity-equal(1) {
+	        @include button();
+	        @include button-primary();
+	        @include button-small();
+            @include pull-right();
+        }
+    }
+}

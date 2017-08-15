@@ -1,0 +1,26 @@
+﻿@mixin imageUploadView() {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: block;
+    .card-block {
+        padding: 0;
+    }
+    div {
+        float: none;
+        padding: 0;
+        margin: 0;
+    }
+    .p-q {
+        padding: 0 !important;
+        margin: 0;
+    }
+    h1,h2,h3,h4,p,div {
+        &:empty {
+            display: none;
+        }
+    }
+    ul {
+        @include panel-figure-list()
+    }
+}

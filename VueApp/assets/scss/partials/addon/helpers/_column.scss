@@ -1,0 +1,15 @@
+@mixin column($xs: 12, $sm: 12, $md: 12, $lg: 12, $offset: false) {
+  @if $offset {
+    @include make-xs-column-offset($xs);
+    @include make-sm-column-offset($sm);
+    @include make-md-column-offset($md);
+    @include make-lg-column-offset($lg);
+  }
+  @else {
+    @include make-sm-column($sm);
+    @include make-md-column($md);
+    @include make-lg-column($lg);
+    @include make-xs-column($xs, 10px);
+  }
+  @include box-sizing(border-box);
+}

@@ -1,0 +1,138 @@
+﻿
+@mixin panel-form() {
+  legend {
+    margin-bottom: 19px;
+  }
+  mark {
+    background: transparent;
+    @include panel-mark();
+    margin-bottom: 19px;
+    &.error {
+        color: orangered;
+        text-align: center;
+    }
+  }
+  label {
+    color: #16325C;
+    font-size: 13px;
+    white-space: nowrap;
+    select {
+      @include inline-block();
+      margin-left: 18px;
+    }
+  }
+  footer {
+    margin-top: 24px;
+    > * {
+        @include button();
+        @include button-primary();
+        @include button-small();
+        @include button-block();
+    }
+  }
+}
+
+@mixin panel-figure-list() {
+  @include list-horizontal(20px);
+  display: block;
+  width: 100%;
+  > li {
+    width: 23.97%;
+    figure {
+      @include aspect-ratio(1, 1);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@mixin panel-title() {
+  font-size: 13px;
+  color: #54698D;
+  letter-spacing: 0.14em;
+  margin-bottom: 9px;
+  font-weight: $font-regular;
+  line-height: 1;
+}
+
+@mixin panel-mark() {
+  background: transparent;
+  font-size: 20px;
+  color: #16325C;
+}
+
+@mixin panel-definition($compact: false) {
+  @if $compact {
+    border-bottom: 1px solid #D8DDE6;
+    @include clearfix();
+    padding: 8px 0;
+    dt {
+        @include pull-left();
+        width: 60%;
+        font-size: 12px;
+        color: #54698D;
+        font-weight: $font-regular;
+        padding-right: 4px;
+    }
+    dd {
+        @include pull-right();
+        width: 38%;
+        font-size: 13px;
+        color: #16325C;
+        margin-left: 2%;
+        padding-right: 4px;
+        word-break: break-all;
+    }
+  }
+  @else {
+      width: 60%;
+	  dt {
+	    @include panel-title();
+	  }
+	  dd {
+	    @include panel-mark();
+	    span {
+	        @include panel-mark();
+	    }
+	  }
+	  + dl {
+	    margin-top: 35px;
+	  }
+  }
+}
+
+@mixin panel-heading-small($border: false) {
+  font-size: 20px;
+  color: #16325C;
+  line-height: 1.4;
+  position: relative;
+  padding: 10px 0;
+  @if $border {
+    border-bottom: 1px solid #E0E5EE;
+    line-height: 1;
+  }
+}
+
+@mixin panel-info() {
+  width: 50.78%;
+  color: #54698D;
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+
+@mixin panel-heading() {
+  color: #16325C;
+  font-size: 28px;
+  line-height: 1.4;
+  margin: 32px 0 0 0;
+  width: 80%;
+  &:not(:only-child) {
+    margin-bottom: 19px;
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}

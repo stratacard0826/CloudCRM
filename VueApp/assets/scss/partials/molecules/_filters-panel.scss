@@ -1,0 +1,48 @@
+﻿@mixin filters-panel() {
+    background: #E0E5EE;
+    > header {
+      margin: 0 -16px;
+      > * {
+        border-color: #A8B7C7;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        line-height: 1.4;
+        > * {
+            right: 16px;
+            bottom: 18px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+      }
+    }
+    > section {
+        &:not(:first-of-type) {
+            h3 {
+                margin-top: 32px;
+            }
+        }
+    }
+    h3 {
+        font-size: 16px;
+        padding-bottom: 19px;
+        border-bottom: 1px solid #A8B7C7;
+        margin-bottom: 16px;
+        padding: 16px 0;
+
+    }
+    h4 {
+        margin-top: 24px;
+    }
+    .checkbox {
+        display: block;
+        font-size: 12px;
+        color: #54698D;
+        @include custom-checkbox();
+        + .checkbox {
+            margin-top: 8px;
+        }
+    }
+}
